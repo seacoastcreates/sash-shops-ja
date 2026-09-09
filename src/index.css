@@ -97,7 +97,8 @@ a {
 .wrap {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .eyebrow {
@@ -326,7 +327,12 @@ header {
 
 /* ---------- Sections ---------- */
 section {
-  padding: 72px 0;
+  padding: 96px 0;
+}
+@media (max-width: 600px) {
+  section {
+    padding: 64px 0;
+  }
 }
 .section-head {
   max-width: 640px;

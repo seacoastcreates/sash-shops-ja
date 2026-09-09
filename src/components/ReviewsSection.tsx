@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
-import { localReviewsService as reviewsService, type Review } from '../services/reviewsService'
+import { firebaseReviewsService as reviewsService } from '../services/firebaseReviewsService'
+import type { Review } from '../services/reviewsService'
 import { flagFor, starString } from '../utils'
 
 type FormStatus = { text: string; kind: 'ok' | 'error' | '' }
