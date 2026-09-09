@@ -13,7 +13,6 @@ export default function WhyChooseUs() {
   return (
     <section className="wrap">
       <div className="section-head">
-        <div className="eyebrow">Manifest · 03</div>
         <h2>Why Choose Sash Shops Ja?</h2>
       </div>
       <div className="why-grid">

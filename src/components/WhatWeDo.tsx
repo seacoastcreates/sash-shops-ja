@@ -19,7 +19,6 @@ export default function WhatWeDo() {
     <section className="wrap">
       <div className="whatwedo">
         <div>
-          <div className="eyebrow">Manifest · 01</div>
           <h2>What We Do</h2>
           <p style={{ color: 'var(--ink-soft)', marginTop: 14, maxWidth: '52ch' }}>
             At Sash Shops Ja, we provide a convenient personal shopping and international

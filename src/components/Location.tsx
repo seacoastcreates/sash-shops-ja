@@ -2,7 +2,6 @@ export default function Location() {
   return (
     <section className="wrap">
       <div className="section-head">
-        <div className="eyebrow">Route · 04</div>
         <h2>Where We're Located</h2>
       </div>
       <div className="route-wrap">

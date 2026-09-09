@@ -29,7 +29,6 @@ export default function HowItWorks() {
   return (
     <section className="wrap">
       <div className="section-head">
-        <div className="eyebrow">Route · 02</div>
         <h2>How It Works</h2>
       </div>
       <div className="steps">

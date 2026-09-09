@@ -62,7 +62,6 @@ export default function ReviewsSection() {
   return (
     <section className="wrap" id="reviews">
       <div className="section-head">
-        <div className="eyebrow">Manifest · 05</div>
         <h2>What Our Customers Say</h2>
         <p>
           Your experience matters to us. After receiving your order, share how it went — it
