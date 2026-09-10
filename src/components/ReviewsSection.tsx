@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { firebaseReviewsService as reviewsService } from '../services/firebaseReviewsService'
 import type { Review } from '../services/reviewsService'
-import { flagFor, starString } from '../utils'
+import { starString } from '../utils'
+import ReviewCarousel from './ReviewCarousel'
 
 type FormStatus = { text: string; kind: 'ok' | 'error' | '' }
 
@@ -82,27 +83,7 @@ export default function ReviewsSection() {
         </div>
       )}
 
-      <div className="review-grid">
-        {!loaded && <div className="review-empty">Loading reviews…</div>}
-        {loaded && reviews.length === 0 && (
-          <div className="review-empty">No reviews yet — be the first to share your experience!</div>
-        )}
-        {reviews.map((r) => (
-          <div className="review-card" key={r.id}>
-            <div className="rc-top">
-              <div>
-                <div className="rc-name">{r.name}</div>
-                <div className="rc-country">
-                  {flagFor(r.country)} {r.country}
-                </div>
-              </div>
-              <div className="rc-stars">{starString(r.rating)}</div>
-            </div>
-            <p>{r.text}</p>
-            {r.recommend === 'yes' && <div className="rc-rec">Recommends Sash Shops Ja</div>}
-          </div>
-        ))}
-      </div>
+      <ReviewCarousel reviews={reviews} loaded={loaded} />
 
       <div className="review-form">
         <h3>Leave a Review</h3>
