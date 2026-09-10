@@ -32,11 +32,10 @@ type Social = {
   Icon: FC<SVGProps<SVGSVGElement>>
 }
 
-// TODO: swap these placeholder URLs for Sash Shops Ja's real profile links.
 const SOCIALS: Social[] = [
-  { name: 'Instagram', href: 'https://instagram.com/', Icon: InstagramIcon },
-  { name: 'TikTok', href: 'https://tiktok.com/', Icon: TikTokIcon },
-  { name: 'Facebook', href: 'https://facebook.com/', Icon: FacebookIcon },
+  { name: 'Instagram', href: 'https://instagram.com/sashshopsja', Icon: InstagramIcon },
+  { name: 'TikTok', href: 'https://tiktok.com/@sashshopsja', Icon: TikTokIcon },
+  { name: 'Facebook', href: 'https://facebook.com/sashshopsja', Icon: FacebookIcon },
 ]
 
 type Props = {
