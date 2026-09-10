@@ -1,29 +1,17 @@
-import Hero from './components/Hero'
-import WhatWeDo from './components/WhatWeDo'
-import HowItWorks from './components/HowItWorks'
-import WhyChooseUs from './components/WhyChooseUs'
-import Location from './components/Location'
-import ReviewsSection from './components/ReviewsSection'
-import FinalCta from './components/FinalCta'
+import { Route, Routes } from 'react-router-dom'
+import Nav from './components/Nav'
 import Footer from './components/Footer'
-import Perf from './components/Perf'
+import Home from './pages/Home'
+import Contact from './pages/Contact'
 
 export default function App() {
   return (
     <>
-      <Hero />
-      <main>
-        <WhatWeDo />
-        <Perf />
-        <HowItWorks />
-        <Perf />
-        <WhyChooseUs />
-        <Perf />
-        <Location />
-        <Perf />
-        <ReviewsSection />
-        <FinalCta />
-      </main>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
       <Footer />
     </>
   )

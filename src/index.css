@@ -677,6 +677,8 @@ section {
   color: var(--ink-soft);
 }
 .field input[type='text'],
+.field input[type='email'],
+.field input[type='tel'],
 .field textarea {
   font-family: 'Work Sans', sans-serif;
   font-size: 0.95rem;
@@ -831,6 +833,197 @@ footer {
 }
 .foot-links a:hover {
   color: var(--jam-green);
+}
+
+/* ---------- Site nav ---------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--paper);
+  border-bottom: 1px dashed var(--line);
+}
+.site-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.site-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 1.02rem;
+}
+.site-nav-brand .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--jam-gold-fill);
+}
+.site-nav-links {
+  display: flex;
+  gap: 22px;
+}
+.site-nav-link {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+.site-nav-link:hover {
+  color: var(--ink);
+}
+.site-nav-link.active {
+  color: var(--jam-green-deep);
+  border-bottom-color: var(--jam-green-deep);
+}
+
+/* ---------- Sub-page header (e.g. Contact) ---------- */
+.page-hero {
+  background: var(--hero-grad);
+  padding: 56px 24px 64px;
+  position: relative;
+}
+.page-hero .eyebrow {
+  color: #fff;
+  opacity: 0.92;
+}
+.page-hero .eyebrow::before {
+  background: #fff;
+  opacity: 0.7;
+}
+.page-hero h1 {
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  text-shadow: 0 3px 22px rgba(8, 20, 14, 0.28);
+}
+.page-hero-lede {
+  margin-top: 14px;
+  max-width: 52ch;
+  color: #fff;
+  font-size: 1rem;
+  text-shadow: 0 2px 14px rgba(8, 20, 14, 0.22);
+}
+
+/* ---------- Contact page ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 820px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.contact-direct {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px 22px;
+}
+.contact-direct h3 {
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+}
+.contact-direct-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.95rem;
+}
+.contact-direct-links a {
+  text-decoration: none;
+  color: var(--ink);
+}
+.contact-direct-links a:hover {
+  color: var(--jam-green);
+}
+
+/* Honeypot field — visually hidden but not display:none, and kept out of
+   the tab order / a11y tree so real visitors (incl. screen readers)
+   never encounter it. Bots that auto-fill every field trip it. */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ---------- Success modal ---------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 20, 14, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 100;
+}
+.modal {
+  background: var(--paper);
+  border-radius: 18px;
+  padding: 32px 28px;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+}
+.modal h2 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.modal p {
+  color: var(--ink-soft);
+  margin-bottom: 22px;
+}
+
+/* ---------- Social links ---------- */
+.socials-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.social-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px dashed var(--jam-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--jam-gold);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.social-icon svg {
+  width: 22px;
+  height: 22px;
+}
+.social-link:hover .social-icon {
+  border-color: var(--jam-green-deep);
+  color: var(--jam-green-deep);
 }
 
 @media (prefers-reduced-motion: reduce) {

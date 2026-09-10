@@ -21,6 +21,21 @@
   </head>
   <body>
     <div id="root"></div>
+    <!--
+      Netlify only detects forms by scanning the static HTML at deploy
+      time, but this form is actually rendered by React at runtime — so
+      Netlify would never see it. This hidden duplicate exists purely so
+      Netlify's build-time form parser can register "contact" and its
+      fields. It is never shown or submitted; the real form in
+      ContactForm.tsx does the AJAX submit against this registration.
+    -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
