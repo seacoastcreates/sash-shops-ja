@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import Contact from './pages/Contact'
 import CookieConsent from './components/CookieConsent'
+import BackToTop from './components/BackToTop'
 import { getStoredConsent, setStoredConsent } from './services/consent'
 import { isAnalyticsConfigured, startAnalytics, trackPageview, updateConsent } from './services/analytics'
 
@@ -50,6 +51,7 @@ export default function App() {
       </Routes>
       <Footer onOpenCookiePreferences={() => setConsentVisible(true)} />
       <CookieConsent visible={consentVisible} onAccept={handleAccept} onDecline={handleDecline} />
+      <BackToTop />
     </>
   )
 }
