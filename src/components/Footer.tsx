@@ -1,3 +1,5 @@
+import SocialLinks from './SocialLinks'
+
 export default function Footer() {
   return (
     <footer>
@@ -10,6 +12,7 @@ export default function Footer() {
           <a href="tel:+18765191502">1-876-519-1502</a>
           <a href="mailto:sashshopsja@gmail.com">sashshopsja@gmail.com</a>
         </div>
+        <SocialLinks iconOnly />
         <div>Kingston, Jamaica</div>
       </div>
     </footer>

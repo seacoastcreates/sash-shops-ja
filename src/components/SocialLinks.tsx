@@ -39,15 +39,27 @@ const SOCIALS: Social[] = [
   { name: 'Facebook', href: 'https://facebook.com/', Icon: FacebookIcon },
 ]
 
-export default function SocialLinks() {
+type Props = {
+  /** Icons only, no visible label — for tight spaces like the footer. */
+  iconOnly?: boolean
+}
+
+export default function SocialLinks({ iconOnly = false }: Props) {
   return (
-    <div className="socials-row">
+    <div className={iconOnly ? 'socials-row socials-row-compact' : 'socials-row'}>
       {SOCIALS.map(({ name, href, Icon }) => (
-        <a key={name} className="social-link" href={href} target="_blank" rel="noopener noreferrer">
+        <a
+          key={name}
+          className="social-link"
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={iconOnly ? name : undefined}
+        >
           <span className="social-icon">
             <Icon />
           </span>
-          {name}
+          {!iconOnly && name}
         </a>
       ))}
     </div>

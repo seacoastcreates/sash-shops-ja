@@ -1025,6 +1025,17 @@ footer {
   border-color: var(--jam-green-deep);
   color: var(--jam-green-deep);
 }
+.socials-row-compact {
+  gap: 12px;
+}
+.socials-row-compact .social-icon {
+  width: 32px;
+  height: 32px;
+}
+.socials-row-compact .social-icon svg {
+  width: 15px;
+  height: 15px;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .btn {
