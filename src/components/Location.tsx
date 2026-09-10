@@ -1,4 +1,4 @@
-import JamaicaIslandIcon from './JamaicaIslandIcon'
+import JamaicaFlagCircle from './JamaicaFlagCircle'
 
 export default function Location() {
   return (
@@ -28,8 +28,8 @@ export default function Location() {
             <path d="M90,110 L300,110" />
             <path d="M90,110 L300,180" />
           </g>
-          <JamaicaIslandIcon x={55} y={92.5} width={70} height={35} />
-          <text x={90} y={138} textAnchor="middle" fill="var(--ink-soft)" fontFamily="Space Mono, monospace" fontSize={7}>
+          <JamaicaFlagCircle x={60} y={80} width={60} height={60} />
+          <text x={90} y={152} textAnchor="middle" fill="var(--ink-soft)" fontFamily="Space Mono, monospace" fontSize={7}>
             KINGSTON
           </text>
 
