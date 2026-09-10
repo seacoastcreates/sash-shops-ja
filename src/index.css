@@ -1121,6 +1121,17 @@ section[id] {
 .contact-direct-links a:hover {
   color: var(--jam-green);
 }
+.contact-side {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.contact-socials-image {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
 
 /* Honeypot field — visually hidden but not display:none, and kept out of
    the tab order / a11y tree so real visitors (incl. screen readers)

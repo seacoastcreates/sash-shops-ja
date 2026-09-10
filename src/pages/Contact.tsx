@@ -1,6 +1,7 @@
 import ContactForm from '../components/ContactForm'
 import SocialLinks from '../components/SocialLinks'
 import Perf from '../components/Perf'
+import socialsImage from '../assets/sash-shops-ja-socials.jpeg'
 
 export default function Contact() {
   return (
@@ -23,13 +24,20 @@ export default function Contact() {
               <p className="rf-sub">We typically reply within a day.</p>
               <ContactForm />
             </div>
-            <div className="contact-direct">
-              <h3>Prefer to reach us directly?</h3>
-              <div className="contact-direct-links">
-                <a href="https://wa.me/18765191502">WhatsApp</a>
-                <a href="tel:+18765191502">1-876-519-1502</a>
-                <a href="mailto:sashshopsja@gmail.com">sashshopsja@gmail.com</a>
+            <div className="contact-side">
+              <div className="contact-direct">
+                <h3>Prefer to reach us directly?</h3>
+                <div className="contact-direct-links">
+                  <a href="https://wa.me/18765191502">WhatsApp</a>
+                  <a href="tel:+18765191502">1-876-519-1502</a>
+                  <a href="mailto:sashshopsja@gmail.com">sashshopsja@gmail.com</a>
+                </div>
               </div>
+              <img
+                src={socialsImage}
+                alt="Sash Shops Ja — find us on Facebook, Instagram, Google Reviews, and TikTok"
+                className="contact-socials-image"
+              />
             </div>
           </div>
         </section>
