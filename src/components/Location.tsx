@@ -1,3 +1,5 @@
+import JamaicaIslandIcon from './JamaicaIslandIcon'
+
 export default function Location() {
   return (
     <section className="wrap" id="location">
@@ -26,19 +28,8 @@ export default function Location() {
             <path d="M90,110 L300,110" />
             <path d="M90,110 L300,180" />
           </g>
-          <circle cx={90} cy={110} r={30} fill="var(--jam-green)" />
-          <text
-            x={90}
-            y={106}
-            textAnchor="middle"
-            fill="#fff"
-            fontFamily="Baloo 2, sans-serif"
-            fontWeight={700}
-            fontSize={12}
-          >
-            JA
-          </text>
-          <text x={90} y={121} textAnchor="middle" fill="#fff" fontFamily="Space Mono, monospace" fontSize={7}>
+          <JamaicaIslandIcon x={55} y={92.5} width={70} height={35} />
+          <text x={90} y={138} textAnchor="middle" fill="var(--ink-soft)" fontFamily="Space Mono, monospace" fontSize={7}>
             KINGSTON
           </text>
 
