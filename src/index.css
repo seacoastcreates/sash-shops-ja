@@ -1121,6 +1121,21 @@ section[id] {
 .contact-direct-links a:hover {
   color: var(--jam-green);
 }
+.contact-direct-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.contact-icon-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.contact-icon-link svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
 .contact-side {
   display: flex;
   flex-direction: column;
