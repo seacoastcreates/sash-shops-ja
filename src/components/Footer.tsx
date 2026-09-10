@@ -1,7 +1,12 @@
 import SocialLinks from './SocialLinks'
 import { WhatsAppIcon, EmailIcon } from './ContactIcons'
+import { isAnalyticsConfigured } from '../services/analytics'
 
-export default function Footer() {
+type Props = {
+  onOpenCookiePreferences?: () => void
+}
+
+export default function Footer({ onOpenCookiePreferences }: Props) {
   return (
     <footer>
       <div className="wrap foot-wrap">
@@ -17,6 +22,11 @@ export default function Footer() {
             <EmailIcon />
             sashshopsja@gmail.com
           </a>
+          {isAnalyticsConfigured() && onOpenCookiePreferences && (
+            <button type="button" className="foot-cookie-btn" onClick={onOpenCookiePreferences}>
+              Cookie Preferences
+            </button>
+          )}
         </div>
         <SocialLinks iconOnly />
         <div>Kingston, Jamaica</div>
