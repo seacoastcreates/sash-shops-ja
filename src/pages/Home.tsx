@@ -9,6 +9,7 @@ import ReviewsSection from '../components/ReviewsSection'
 import FinalCta from '../components/FinalCta'
 import Perf from '../components/Perf'
 import SuccessModal from '../components/SuccessModal'
+import { scrollToSection } from '../utils'
 
 type NavState = { contactSubmitted?: boolean } | null
 
@@ -22,6 +23,16 @@ export default function Home() {
     // navigating back doesn't re-show the modal.
     if ((location.state as NavState)?.contactSubmitted) {
       navigate(location.pathname, { replace: true, state: null })
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  useEffect(() => {
+    // Landing here from another page (e.g. the mobile drawer's section
+    // links while on /contact) jumps straight to the section — no
+    // animation, since a full route change already happened.
+    if (location.hash) {
+      scrollToSection(location.hash.slice(1), 'auto')
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

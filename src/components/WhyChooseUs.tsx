@@ -11,7 +11,7 @@ const REASONS = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="wrap">
+    <section className="wrap" id="why-choose-us">
       <div className="section-head">
         <h2>Why Choose Sash Shops Ja?</h2>
       </div>

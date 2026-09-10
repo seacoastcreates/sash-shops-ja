@@ -16,7 +16,7 @@ const SERVED_COUNTRIES = [
 
 export default function WhatWeDo() {
   return (
-    <section className="wrap">
+    <section className="wrap" id="what-we-do">
       <div className="whatwedo">
         <div>
           <h2>What We Do</h2>

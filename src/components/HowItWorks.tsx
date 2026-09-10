@@ -27,7 +27,7 @@ const STEPS = [
 
 export default function HowItWorks() {
   return (
-    <section className="wrap">
+    <section className="wrap" id="how-it-works">
       <div className="section-head">
         <h2>How It Works</h2>
       </div>

@@ -1,6 +1,6 @@
 export default function Location() {
   return (
-    <section className="wrap">
+    <section className="wrap" id="location">
       <div className="section-head">
         <h2>Where We're Located</h2>
       </div>

@@ -18,3 +18,10 @@ export function starString(rating: number): string {
   const rounded = Math.max(0, Math.min(5, Math.round(rating)))
   return '★★★★★'.slice(0, rounded) + '☆☆☆☆☆'.slice(0, 5 - rounded)
 }
+
+export function scrollToSection(id: string, behavior: ScrollBehavior = 'smooth') {
+  const el = document.getElementById(id)
+  if (!el) return
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  el.scrollIntoView({ behavior: reduceMotion ? 'auto' : behavior })
+}
