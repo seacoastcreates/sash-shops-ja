@@ -31,6 +31,15 @@ export default function ReviewsSection() {
     if (!form) return
 
     const data = new FormData(form)
+
+    // Honeypot: real visitors never see or fill this field. Pretend
+    // success instead of erroring, so bots don't learn they were caught.
+    if (String(data.get('bot-field') || '').trim()) {
+      form.reset()
+      setStatus({ text: 'Thank you for sharing your experience!', kind: 'ok' })
+      return
+    }
+
     const name = String(data.get('name') || '').trim()
     const country = String(data.get('country') || '').trim()
     const text = String(data.get('text') || '').trim()
@@ -89,6 +98,13 @@ export default function ReviewsSection() {
         <h3>Leave a Review</h3>
         <p className="rf-sub">Have you shopped with us before? Tell us about your experience.</p>
         <form ref={formRef} onSubmit={handleSubmit}>
+          <p className="hp-field" aria-hidden="true">
+            <label>
+              Leave this field blank
+              <input type="text" id="rf-bot-field" name="bot-field" tabIndex={-1} autoComplete="off" />
+            </label>
+          </p>
+
           <div className="rf-grid">
             <div className="field">
               <label htmlFor="rf-name">Name</label>
