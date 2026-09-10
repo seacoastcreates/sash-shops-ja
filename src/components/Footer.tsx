@@ -1,4 +1,5 @@
 import SocialLinks from './SocialLinks'
+import { WhatsAppIcon, EmailIcon } from './ContactIcons'
 
 export default function Footer() {
   return (
@@ -8,9 +9,14 @@ export default function Footer() {
           <span className="dot" /> Sash Shops Ja
         </div>
         <div className="foot-links">
-          <a href="https://wa.me/18765191502">WhatsApp</a>
+          <a href="https://wa.me/18765191502" className="contact-icon-link" aria-label="WhatsApp">
+            <WhatsAppIcon />
+          </a>
           <a href="tel:+18765191502">1-876-519-1502</a>
-          <a href="mailto:sashshopsja@gmail.com">sashshopsja@gmail.com</a>
+          <a href="mailto:sashshopsja@gmail.com" className="contact-icon-link">
+            <EmailIcon />
+            sashshopsja@gmail.com
+          </a>
         </div>
         <SocialLinks iconOnly />
         <div>Kingston, Jamaica</div>
