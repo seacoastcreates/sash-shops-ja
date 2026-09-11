@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sashshopsja.com/sitemap.xml
