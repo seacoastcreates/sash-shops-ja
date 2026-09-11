@@ -26,11 +26,11 @@ export default function Location() {
             <path d="M90,110 L300,110" />
             <path d="M90,110 L300,180" />
           </g>
-          <circle cx={90} cy={110} r={30} fill="var(--paper-raised)" stroke="var(--line)" strokeWidth={1.5} />
-          <text x={90} y={116} textAnchor="middle" fontSize={21}>
+          <circle cx={90} cy={110} r={34} fill="var(--paper-raised)" stroke="var(--line)" strokeWidth={1.5} />
+          <text x={90} y={118} textAnchor="middle" fontSize={24}>
             🇯🇲
           </text>
-          <text x={90} y={152} textAnchor="middle" fill="var(--ink-soft)" fontFamily="Space Mono, monospace" fontSize={7}>
+          <text x={90} y={156} textAnchor="middle" fill="var(--ink-soft)" fontFamily="Space Mono, monospace" fontSize={7}>
             KINGSTON
           </text>
 

@@ -959,7 +959,7 @@ footer {
   height: 44px;
   border-radius: 50%;
   border: 1px solid var(--line);
-  background: var(--paper-raised);
+  background: rgba(243, 231, 203, 0.2);
   color: var(--ink-soft);
   display: flex;
   align-items: center;
@@ -969,15 +969,16 @@ footer {
   opacity: 0;
   transform: translateY(8px);
   pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.15s ease, color 0.15s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.15s ease, color 0.15s ease,
+    background 0.15s ease;
 }
 .back-to-top.visible {
-  opacity: 0.85;
+  opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
 .back-to-top:hover {
-  opacity: 1;
+  background: var(--paper-raised);
   border-color: var(--jam-green-deep);
   color: var(--jam-green-deep);
 }

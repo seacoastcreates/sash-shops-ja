@@ -7,11 +7,20 @@ export default function BackToTop() {
 
   useEffect(() => {
     function onScroll() {
-      setVisible(window.scrollY > window.innerHeight * SHOW_THRESHOLD_FACTOR)
+      // Threshold is 50% of the way through the whole page's scrollable
+      // distance, not just half a screen — half a screen is barely any
+      // scrolling on a long page and made the button feel premature.
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight
+      const progress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0
+      setVisible(progress > SHOW_THRESHOLD_FACTOR)
     }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    window.addEventListener('resize', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
   }, [])
 
   function scrollToTop() {
