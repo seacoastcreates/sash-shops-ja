@@ -12,6 +12,7 @@ import { isAnalyticsConfigured, startAnalytics, trackPageview, updateConsent } f
 export default function App() {
   const location = useLocation()
   const [consentVisible, setConsentVisible] = useState(false)
+  const [consentGranted, setConsentGranted] = useState(false)
 
   useEffect(() => {
     if (!isAnalyticsConfigured()) return
@@ -19,6 +20,7 @@ export default function App() {
     const stored = getStoredConsent()
     if (stored === 'accepted') {
       updateConsent(true)
+      setConsentGranted(true)
     } else if (stored === null) {
       setConsentVisible(true)
     }
@@ -27,18 +29,24 @@ export default function App() {
   }, [])
 
   useEffect(() => {
+    // Only fires once consent is actually granted — a pageview queued
+    // while consent is denied never gets sent, so this must re-run
+    // whenever consentGranted flips true too, not just on route change.
+    if (!consentGranted) return
     trackPageview(location.pathname + location.hash)
-  }, [location.pathname, location.hash])
+  }, [location.pathname, location.hash, consentGranted])
 
   function handleAccept() {
     setStoredConsent('accepted')
     updateConsent(true)
+    setConsentGranted(true)
     setConsentVisible(false)
   }
 
   function handleDecline() {
     setStoredConsent('declined')
     updateConsent(false)
+    setConsentGranted(false)
     setConsentVisible(false)
   }
 
